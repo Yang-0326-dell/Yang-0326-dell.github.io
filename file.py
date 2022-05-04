@@ -28,8 +28,8 @@ if length>standard:
 	i=standard
 	while i<length:
 		if len(lines[i])==1:
-			parts.append(lines[0:i])
-			start_point=i
+			parts.append(lines[i-standard:i])
+			startpoint=i
 			i=i+standard
 		else:
 			for j in range(0,len(blank)-2):
@@ -44,7 +44,7 @@ if length>standard:
 						i=blank[j+1]+standard
 					break
 				
-		print('part'+str(wait)+'\n')	
+		print('part'+str(wait)+"  "+str(startpoint)+"  "+str(i)+'\n')	
 		wait+=1		
 
 parts.append(lines[startpoint:length-1])
@@ -55,7 +55,7 @@ index=1
 
 for part in parts:
 	fn=filename0+str(index)+'.txt'
-	f=open(fn,"a")
+	f=open(fn,"w")
 	for line in part:
 		f.write(line)
 		f.write('\n')

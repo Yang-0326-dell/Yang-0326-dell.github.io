@@ -64,6 +64,7 @@ for part in parts:
 	
 filename=filename0+".html"
 f=open(filename,"w")
+f.write("<head><a target='_blank' href='index.html'><input type='button' value='Back to home' alt='Click to go back to homepage;'></a></head>")
 f.write("<p>\""+bookname+"\"<p>")
 for i in range(1,index):
 	print("<a href='"+filename0+str(i)+".txt'>"+'Part'+str(i)+'</a><br/>')

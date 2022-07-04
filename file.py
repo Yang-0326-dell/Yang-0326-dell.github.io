@@ -1,4 +1,5 @@
-filename0='002'
+filename0=input("file name:")
+bookname=input("book name:")
 
 filename=filename0+'.txt'
 
@@ -22,7 +23,7 @@ startpoint=0
 
 standard=500
 
-standard=int(input(""))
+standard=int(input("lines in each part:"))
 if length>standard:
 	wait=0
 	i=standard
@@ -58,9 +59,14 @@ for part in parts:
 	f=open(fn,"w")
 	for line in part:
 		f.write(line)
-		f.write('\n')
 	f.close()
 	index+=1
 	
+filename=filename0+".html"
+f=open(filename,"w")
+f.write("<p>\""+bookname+"\"<p>")
 for i in range(1,index):
 	print("<a href='"+filename0+str(i)+".txt'>"+'Part'+str(i)+'</a><br/>')
+	f.write("<a href='"+filename0+str(i)+".txt'>"+'Part'+str(i)+'</a><br/>')
+
+f.close()
